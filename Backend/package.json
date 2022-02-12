@@ -4,13 +4,17 @@
   "description": "Backend BDoctor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Brandon Velásquez",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "nodemailer": "^6.7.2",
     "pg": "^8.7.3"
   }
 }
