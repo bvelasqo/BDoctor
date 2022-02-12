@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --bg-color: #EFEBE2;
+    --primary-color: #D9D0C8;
+    --secondary-color: #DFC2A8;
+    --text-color-bold: #222B45;
+    --text-color-regular: #6B779A;
+}
+
+*{
+    background-color: var(--bg-color);
+    font-family: Cookie;
+}
+
+.app{
+    margin: 12px 12px;
+}
