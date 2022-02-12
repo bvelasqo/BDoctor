@@ -1,13 +1,11 @@
 const express = require("express");
-
-const router = express.Router();
-
 const _meetController = require("../controllers/meets/meet.controller");
 
-router.get('/:id', _meetController.getOneMeet)
-    .post('/date', _meetController.getDates)
-    .put('/:id', _meetController.editMeet)
-    .post('/:id', _meetController.deleteMeet)
-    .post('/', _meetController.createMeet);
+const router = express.Router();
+router.get('/:id', _meetController.getOneMeet);
+router.post('/date', _meetController.getDates);
+router.put('/:id', _meetController.editMeet);
+router.post('/:id', _meetController.deleteMeet);
+router.post('/', _meetController.createMeet);
 
 module.exports = router;

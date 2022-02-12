@@ -2,21 +2,22 @@ const nodemailer = require("nodemailer");
 const config = require("../config/index");
 class mailerService {
     constructor() {
-        this.config_transport();
+        this._config_transport();
         this.sender = `"BDoctor" <${config.mailer_sender}>`;
     }
 
     async _config_transport() {
-        this.sender = nodemailer.createTransport({
+        this.transport = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 465,
             secure: true,
             auth: {
                 user: config.mailer_sender,
-                pass: config.mailer_sender
+                pass: config.mailer_password
             },
         });
     }
+
     async sendMessage(addressee, subject, body) {
         await this.transport.sendMail({
             from: this.sender,

@@ -1,4 +1,5 @@
 const PostgresService = require("../../services/postgres.service");
+
 const _pg = new PostgresService();
 
 /**
@@ -28,7 +29,7 @@ const getPatient = async (req, res) => {
 };
 
 /**
- * Método para crear una cita
+ * Método para crear un paciente
  * @param {Request} req
  * @param {Response} res
  * @returns
@@ -36,14 +37,24 @@ const getPatient = async (req, res) => {
 const createPatient = async (req, res) => {
     try {
         let patient = req.body;
-        let sql = `INSERT INTO public.patients (id,"name", phone_number, email) 
-    VALUES($1, $2, $3, $4)`;
+        let id = patient.id;
+        let sql = "select * from patients WHERE id='" + id + "';";
+        let result = await _pg.executeSql(sql);
+        if (result.rowCount == 1) {
+            updatePatient(patient);
+            return res.status(400).send({
+                ok: false,
+                message: "the patient dont be created but has been update",
+                content: patient,
+            });
+        }
+        sql = `INSERT INTO public.patients (id,"name", phone_number, email) VALUES($1, $2, $3, $4)`;
         let data = [];
-        data[0] = id;
+        data[0] = patient.id;
         data[1] = patient.name;
         data[2] = patient.phone_number;
         data[3] = patient.email;
-        let result = await _pg.executeSqlData(sql, data);
+        result = await _pg.executeSqlData(sql, data);
         let status = result.rowCount == 1 ? 201 : 400;
         return res.status(status).send({
             ok: result.rowCount == 1,
@@ -59,6 +70,15 @@ const createPatient = async (req, res) => {
     }
 };
 
+const updatePatient = async (patient) => {
+    let sql = `UPDATE public.patients SET "name"=$1, "email"=$2, phone_number=$3 WHERE id=$4`;
+    let data = [];
+    data[0] = patient.name;
+    data[1] = patient.email;
+    data[2] = patient.phone_number;
+    data[3] = patient.id;
+    await _pg.executeSqlData(sql, data);
+}
 
 module.exports = {
     getPatient,
