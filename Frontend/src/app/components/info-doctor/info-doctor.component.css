@@ -1,0 +1,44 @@
+.info_doctor{
+    background: blue;
+    flex: 2 1 auto;
+    
+    /* NEW */
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+.picture{
+        width: 180px;
+        height: 180px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: url('../../../assets/images/doctor.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        
+}
+.background_picture{
+    background-color: #cfbfb2;
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    -webkit-border-radius: 180px;
+    -moz-border-radius: 180px;
+    -ms-border-radius: 180px;
+    -o-border-radius: 180px;
+    margin-top:12px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about{
+    width: 300px;
+}
+img{
+    width: 120px
+}

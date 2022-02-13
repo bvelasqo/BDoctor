@@ -1,3 +1,105 @@
 <div class="form_main">
-    
+    <div class="content_form">
+        <h1>Agenda tu cita!</h1>
+        <form class="center_forms" (ngSubmit)="onSubmit(form.value)" [formGroup]="form">
+            <div class="form_container">
+                <div class="patient_details">
+                    <h3>Detalles del paciente</h3>
+                    <div class="form">
+                        <div class="input_container">
+                            <label for=""><span>Documento de identidad</span></label>
+                            <div class="input_place">
+                                <input formControlName="id" name="id" type="text"
+                                    style="width: 238px; margin-right: 8px;" required >
+                                <button class="down_data" type="button" (click)="downData()"><i class="fa fa-arrow-down"
+                                        aria-hidden="true" style="background-color: transparent;"></i></button>
+                            </div>
+                        </div>
+                        <div class="input_container">
+                            <label for=""><span>Nombre completo</span></label>
+                            <div class="input_place">
+                                <input formControlName="name" name="name" type="text" required value="{{name}}"
+                                    placeholder="{{name}}">
+                            </div>
+                        </div>
+                        <div class="input_container">
+                            <label for=""><span>Correo electrónico</span></label>
+                            <div class="input_place">
+                                <input formControlName="email" name="email" type="text" required value="{{email}}"
+                                    placeholder="{{email}}">
+                            </div>
+                        </div>
+                        <div class="input_container">
+                            <label for=""><span>Número de celular</span></label>
+                            <div class="input_place">
+                                <input formControlName="phone_number" name="phone_number" type="text" required
+                                    value="{{phone_number}}" placeholder="{{phone_number}}">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="meet_details">
+                    <h3>Detalles de la cita</h3>
+                    <div class="form">
+                        <div class="input_container">
+                            <label for=""><span>Fecha</span></label>
+                            <div class="input_dates">
+                                <input formControlName="date_meet" name="date" type="date" name="date_meet" required value="{{date_meet}}">
+                            </div>
+                        </div>
+
+                        <div class="time_container">
+                            <label for=""><span>Hora de la reunion</span></label>
+                            <div class="buttons_container">
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">07:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">07:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">08:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">09:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">09:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">10:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">10:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">11:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">11:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">12:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">12:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">13:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">13:30</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">14:00</button>
+                                <button class="btn_time" type="button" [ngClass]="{'active': tabIndex === 0}"
+                                    (click)="clickTime(this,0)">14:30</button>
+                            </div>
+                        </div>
+                        <div class="center" style="gap: 12px;">
+                            <button class="btn_submit" [disabled]="(email == '' || name == '' ||  date_meet == '' ||  form.value.id== '' || form.value.time_meet  == '' || phone_number  == '')" style="margin-right: 12px;">
+                                Agendar cita
+                            </button>
+                            <button *ngIf="this.btnDeleteActivate" class="btn_submit" style="background-color: rgb(206, 160, 160);">
+                                Cancelar cita
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
 </div>

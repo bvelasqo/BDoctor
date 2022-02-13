@@ -1,0 +1,135 @@
+.form_main{
+    background: blue;
+    flex: 2 1 auto;
+    
+    /* NEW */
+    display: flex;
+    justify-content: center;
+}
+
+.form_container{
+    display: flex;
+    gap: 40px;
+}
+
+.content_form{
+    width: 800px;
+    text-align: center;
+}
+
+.center_forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -32px;
+
+}
+
+.form{
+    margin-top: -16px;
+}
+.input_place{
+    width: 300px;
+}
+.input_container{
+    text-align: start;
+    margin: 20px 0px 20px 0px;
+}
+input{
+    padding-left: 16px;
+    margin-top: 8px;
+    width: 280px;
+    font-size: 20px;
+    background-color: #D9D0C8;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+input:hover{
+    border: solid var(--secondary-color) 0.2px;
+}
+
+input:active{
+    border: solid var(--secondary-color) 0.2px;
+}
+
+.down_data{
+    margin-top: 8px;
+    font-size: 20px;
+    color: #000;
+    background-color: #D9D0C8;
+    border: none;
+    padding-top: 2px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.down_data:hover{
+    border: solid var(--primary-color) 0.1px;
+    cursor: pointer;
+}
+
+.time_container{
+    text-align: start;
+}
+.buttons_container{
+    margin-top: 12px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.btn_time{
+    font-size: 16px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    padding: 8px;
+}
+
+.btn_time:hover{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+.btn_time.active{
+    color: #000;
+    font-weight: 600;
+    background-color: var(--secondary-color);
+
+}
+
+.btn_submit{
+    margin-top: 32px;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border: solid var(--secondary-color);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.btn_submit:hover{
+    border: solid var(--text-color-bold) 1px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
