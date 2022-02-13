@@ -1,0 +1,9 @@
+.info_doctor{
+    grid-column:  1 / 3;
+    background-color: blue;
+}
+.form_main{
+    grid-column: 2 / span 2;
+    background-color: red;
+    width: 500px;
+}
