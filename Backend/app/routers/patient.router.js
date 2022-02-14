@@ -5,6 +5,6 @@ const router = express.Router();
 
 
 router.get('/:id', _patientController.getPatient);
-router.post('/', _patientController.createPatient);
+router.post('', _patientController.createPatient);
 
 module.exports = router;

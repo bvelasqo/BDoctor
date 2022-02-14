@@ -42,7 +42,7 @@ const createPatient = async (req, res) => {
         let result = await _pg.executeSql(sql);
         if (result.rowCount == 1) {
             updatePatient(patient);
-            return res.status(400).send({
+            return res.status(201).send({
                 ok: false,
                 message: "the patient dont be created but has been update",
                 content: patient,

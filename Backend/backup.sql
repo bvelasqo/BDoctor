@@ -24,7 +24,7 @@ CREATE TABLE public.meets
     time_meet time without time zone NOT NULL,
     date_meet date NOT NULL,
     id_patient text NOT NULL,
-    PRIMARY KEY (id_patient),
+    PRIMARY KEY (id),
     CONSTRAINT ct_meet FOREIGN KEY (id_patient)
         REFERENCES public.patients (id) MATCH SIMPLE
         ON UPDATE NO ACTION

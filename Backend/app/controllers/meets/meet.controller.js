@@ -78,21 +78,23 @@ const getOneMeet = async (req, res) => {
 const createMeet = async (req, res) => {
     try {
         let meet = req.body;
+        console.log('MEET ',meet);
         let sql = `INSERT INTO public.meets ("time_meet", "date_meet", id_patient) 
     VALUES($1, $2, $3);`;
         let data = [];
         data[0] = meet.time_meet;
         data[1] = meet.date_meet;
-        data[2] = meet.id_patient;
+        data[2] = meet.id;
         let result = await _pg.executeSqlData(sql, data);
-        await sendMail(data[2], data[1], data[0], result.id, 'Create')
+        sendMail(data[2], data[1], data[0], result.id, 'Create')
         let status = result.rowCount == 1 ? 201 : 400;
         return res.status(status).send({
             ok: result.rowCount == 1,
             message: result.rowCount == 1 ? "Meet created" : "the meet dont be created",
-            content: patient,
+            content: result.row,
         });
     } catch (error) {
+        console.log(error);
         return res.status(500).send({
             ok: false,
             message: "Wrong creating the meet",
