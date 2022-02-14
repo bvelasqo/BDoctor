@@ -1,2 +1,3 @@
 # BDoctor
-Software para registro de citas médicas
+Software para registro de citas médicas.
+
